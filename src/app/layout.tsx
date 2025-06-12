@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
-export const metadata: Metadata = {
-  title: "Personal Profile",
-  description: "My professional portfolio and personal profile",
+export const metadata = {
+  title: 'Creative Developer Portfolio',
+  description: 'A showcase of creative development work and technical expertise',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

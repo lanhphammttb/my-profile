@@ -19,6 +19,68 @@ const EnergyBeam = ({ style }: StyleProps) => (
   <div className="energy-beam" style={style} />
 )
 
+const projects = [
+  {
+    image: '/project-3.jpg',
+    title: 'Food Order System',
+    description:
+      'Embedded programming course project on the topic of food ordering, built with Java — from the ordering flow to a working end-to-end application.',
+    tags: ['Java', 'Embedded Systems', 'Course Project'],
+    link: 'https://github.com/lanhphammttb/DoAn_LapTrinhNhung_FoodOrder',
+  },
+  {
+    image: '/project-1.jpg',
+    title: 'Computer Graphics Project',
+    description:
+      'Computer graphics coursework built with C#, exploring how scenes, shapes and motion are rendered and brought to life on screen.',
+    tags: ['C#', 'Computer Graphics', 'Rendering'],
+    link: 'https://github.com/lanhphammttb/DA_DHMT',
+  },
+  {
+    image: '/project-2.jpg',
+    title: 'MyProject — Java Coursework',
+    description:
+      'A course project built with Java, focused on clean structure, object-oriented design and solving a real problem end to end.',
+    tags: ['Java', 'OOP', 'Course Project'],
+    link: 'https://github.com/lanhphammttb/MyProject',
+  },
+];
+
+const services = [
+  {
+    title: 'Creative Development',
+    icon: <FaCode />,
+    description:
+      'Building modern web applications with clean code, smooth animations and interactive elements that make products feel alive.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+  },
+  {
+    title: 'Software Engineering',
+    icon: <FaRocket />,
+    description:
+      'Crafting reliable software across platforms — web, mobile and desktop — with a focus on performance and user experience.',
+    tags: ['Java', 'C#', 'Flutter', 'JavaScript', 'Git'],
+  },
+  {
+    title: 'Creative Solutions',
+    icon: <FaLightbulb />,
+    description:
+      'Transforming complex problems into elegant, user-friendly digital experiences, from embedded systems to computer graphics.',
+    tags: ['UI/UX', 'Mobile-First', 'Embedded', 'Graphics', 'Problem Solving'],
+  },
+];
+
+const skills = [
+  'Java',
+  'C#',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Flutter',
+  'UI/UX Design',
+];
+
 export default function Home() {
   useEffect(() => {
     // Add sparkles
@@ -84,22 +146,36 @@ export default function Home() {
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 glitch neon-text" data-text="John Doe">
-                John Doe
+              <p className="text-sm md:text-base mb-4 opacity-80 tracking-wide">
+                <HiOutlineSparkles className="inline mr-2" />
+                Hello, I&apos;m
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 glitch neon-text" data-text="Phạm Thị Lanh">
+                Phạm Thị Lanh
               </h1>
-              <p className="text-xl md:text-2xl mb-8 scanner">
+              <p className="text-xl md:text-2xl mb-6 scanner">
                 Full Stack Developer & UI/UX Designer
               </p>
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <button className="sci-button">Contact Me</button>
-                <button className="sci-button">View Projects</button>
+              <p className="text-base md:text-lg mb-8 opacity-80 max-w-xl mx-auto md:mx-0">
+                I turn ideas into working products — web and mobile apps, embedded
+                systems and computer-graphics experiments — with clean code and a
+                designer&apos;s eye for detail.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
+                <a href="#contact" className="sci-button">Contact Me</a>
+                <a href="#projects" className="sci-button">View Projects</a>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {['React', 'Next.js', 'TypeScript', 'Flutter', 'Java', 'C#'].map((tech) => (
+                  <span key={tech} className="tech-tag">{tech}</span>
+                ))}
               </div>
             </div>
             <div className="flex-1 max-w-md">
               <div className="profile-image">
                 <Image
                   src="/profile.jpg"
-                  alt="Profile"
+                  alt="Phạm Thị Lanh"
                   width={400}
                   height={400}
                   className="rounded-xl"
@@ -110,8 +186,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* About Section */}
       <section className="py-20 relative">
+        <div className="cyber-grid absolute inset-0" />
+        <div className="energy-field" />
+        <div className="container mx-auto relative z-10 px-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center neon-text">
+            About Me
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="holo-card p-8">
+              <p className="text-base md:text-lg opacity-90 mb-6">
+                I&apos;m Phạm Thị Lanh, a developer based in Vietnam who enjoys
+                building things end to end — from the first sketch of an interface
+                to the code that brings it to life. My work spans web development,
+                mobile apps, embedded programming and computer graphics.
+              </p>
+              <p className="text-base md:text-lg opacity-90 mb-8">
+                Recent projects include a Java food-ordering system, a C# computer
+                graphics project, and this portfolio itself — built with Next.js
+                and deployed on Vercel.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <p className="text-2xl font-bold neon-text">Based in</p>
+                  <p className="opacity-80">Vietnam</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold neon-text">Focus</p>
+                  <p className="opacity-80">Web & Mobile Apps</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold neon-text">Exploring</p>
+                  <p className="opacity-80">Embedded & Graphics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 relative">
+        <div className="cyber-grid absolute inset-0" />
+        <div className="energy-field" />
+        <div className="container mx-auto relative z-10 px-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center neon-text">
+            What I Do
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div key={service.title} className="holo-card p-6 group">
+                <div className="text-4xl mb-4 neon-text">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 neon-text">{service.title}</h3>
+                <p className="text-sm mb-4 opacity-80">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span key={tag} className="tech-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 relative">
         <div className="cyber-grid absolute inset-0" />
         <div className="energy-field" />
         <div className="container mx-auto relative z-10 px-8">
@@ -119,31 +260,49 @@ export default function Home() {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((project) => (
-              <div key={project} className="holo-card p-6 group">
+            {projects.map((project) => (
+              <div key={project.title} className="holo-card p-6 group">
                 <div className="aspect-video relative mb-4 overflow-hidden rounded-lg scanner">
                   <Image
-                    src={`/project-${project}.jpg`}
-                    alt={`Project ${project}`}
+                    src={project.image}
+                    alt={project.title}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 neon-text">
-                  Project Title {project}
+                  {project.title}
                 </h3>
                 <p className="text-sm mb-4 opacity-80">
-                  A brief description of the project and its key features.
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">TypeScript</span>
-                  <span className="tech-tag">Node.js</span>
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tech-tag">{tag}</span>
+                  ))}
                 </div>
-                <button className="sci-button w-full">View Details</button>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sci-button w-full block text-center"
+                >
+                  View on GitHub
+                </a>
               </div>
             ))}
           </div>
+          <p className="text-center mt-10 opacity-80">
+            More experiments and coursework on{' '}
+            <a
+              href="https://github.com/lanhphammttb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="neon-text underline"
+            >
+              github.com/lanhphammttb
+            </a>
+          </p>
         </div>
       </section>
 
@@ -156,16 +315,7 @@ export default function Home() {
             Skills & Expertise
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              'Frontend Development',
-              'Backend Development',
-              'UI/UX Design',
-              'Cloud Architecture',
-              'DevOps',
-              'Mobile Development',
-              'Database Design',
-              'System Architecture',
-            ].map((skill) => (
+            {skills.map((skill) => (
               <div key={skill} className="holo-card p-6 text-center group">
                 <h3 className="text-lg font-semibold mb-2 neon-text">{skill}</h3>
                 <div className="sparkle absolute top-0 left-1/2 opacity-0 group-hover:opacity-100" />
@@ -178,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 relative">
+      <section id="contact" className="py-20 relative">
         <div className="cyber-grid absolute inset-0" />
         <div className="energy-field" />
         <div className="container mx-auto relative z-10 px-8">
@@ -186,6 +336,24 @@ export default function Home() {
             Get In Touch
           </h2>
           <div className="max-w-2xl mx-auto">
+            <p className="text-center opacity-80 mb-8">
+              Have a project in mind, a question about my work, or just want to
+              say hi? Reach me on GitHub, by email, or with the form below.
+            </p>
+            <div className="flex justify-center gap-4 mb-10">
+              <a
+                href="https://github.com/lanhphammttb"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="sci-button"
+              >
+                <FaGithub className="inline mr-2" /> GitHub
+              </a>
+              <a href="mailto:lanhphammttb@gmail.com" aria-label="Email" className="sci-button">
+                <FaEnvelope className="inline mr-2" /> Email
+              </a>
+            </div>
             <div className="holo-card p-8">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -219,42 +387,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-8 relative">
+        <div className="container mx-auto relative z-10 px-8 text-center opacity-70 text-sm">
+          <p>
+            © {new Date().getFullYear()} Phạm Thị Lanh — Built with Next.js &
+            deployed on Vercel.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
-
-const skills = [
-  {
-    title: "Creative Development",
-    icon: <FaCode />,
-    description: "Building innovative web applications with cutting-edge technologies and modern design principles.",
-    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
-  },
-  {
-    title: "Technical Innovation",
-    icon: <FaRocket />,
-    description: "Crafting scalable solutions with a focus on performance, security, and user experience.",
-    tags: ["Node.js", "GraphQL", "AWS", "Docker", "CI/CD"]
-  },
-  {
-    title: "Creative Solutions",
-    icon: <FaLightbulb />,
-    description: "Transforming complex problems into elegant, user-friendly digital experiences.",
-    tags: ["UI/UX", "Mobile-First", "Accessibility", "Performance", "Analytics"]
-  }
-];
-
-const projects = [
-  {
-    title: "Creative Portfolio",
-    icon: <FaCode />,
-    description: "A modern portfolio website showcasing creative work with smooth animations and interactive elements.",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"]
-  },
-  {
-    title: "Digital Experience",
-    icon: <FaRocket />,
-    description: "An immersive digital experience platform with real-time interactions and 3D elements.",
-    technologies: ["Three.js", "WebGL", "React", "Node.js"]
-  }
-];

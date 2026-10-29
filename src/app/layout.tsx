@@ -7,8 +7,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Creative Developer Portfolio',
-  description: 'A showcase of creative development work and technical expertise',
+  title: 'Phạm Thị Lanh — Full Stack Developer & UI/UX Designer',
+  description: 'Portfolio of Phạm Thị Lanh: web and mobile apps, embedded systems and computer graphics projects.',
 };
 
 export default function RootLayout({
